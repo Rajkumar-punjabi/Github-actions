@@ -1,0 +1,18 @@
+name: First workflow
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run a sample GitHub action
+        run: echo "Workflow run for dev action"
+      - name: Simulating and error
+        run: echo " Error Taaking place" exit 1
