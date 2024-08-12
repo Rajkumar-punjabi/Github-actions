@@ -10,4 +10,4 @@ jobs:
     steps: 
     - uses: actions/checkout@v3
     - name: Run a sample github action
-    - run: echo "workflow run for action"
+      run: echo "workflow run for action"
