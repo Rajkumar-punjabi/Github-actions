@@ -4,7 +4,7 @@ on: push
 
 jobs: 
   build: 
-    run-osi: ubuntu-latest
+    run-ons: ubuntu-latest
 
     
     steps: 
