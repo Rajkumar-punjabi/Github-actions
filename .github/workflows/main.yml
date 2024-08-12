@@ -1,13 +1,16 @@
 name: First workflow
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
-jobs: 
-  build: 
-    run-ons: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    
-    steps: 
-    - uses: actions/checkout@v3
-    - name: Run a sample github action
-      run: echo "workflow run for action"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Run a sample GitHub action
+        run: echo "Workflow run for action"
