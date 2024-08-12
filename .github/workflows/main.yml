@@ -14,3 +14,5 @@ jobs:
         uses: actions/checkout@v3
       - name: Run a sample GitHub action
         run: echo "Workflow run for action"
+      - name: Simulating and error
+        run: echo " Error Taaking place" exit 1
