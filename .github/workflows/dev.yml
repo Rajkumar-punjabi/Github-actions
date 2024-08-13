@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - dev
+    paths-ignore:
+      - README.md
+      - CHANGELOG.md
+      - .gitignore
 
 jobs:
   build:
@@ -15,4 +19,23 @@ jobs:
       - name: Run a sample GitHub action
         run: echo "Workflow run for dev action"
       - name: Simulating and error
-        run: echo " Error Taaking place" exit 1
+        run: echo " Error Taking place" exit 1
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      - name: DisplayPythonversion
+        run: python -c "import sys; print(sys.version)"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip3 install -r requirements.txt; fi
+          pip3 install coverage
+                    pip3 install pytest
+                    pip3 list
+      - name: Run pytests
+        uses: dariocurr/pytest-summary@main
+        with:
+          paths: test/unit/**.py
+          options: -vv -s
+          show: "fail, skip"
