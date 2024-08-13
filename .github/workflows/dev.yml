@@ -19,7 +19,7 @@ jobs:
       - name: Run a sample GitHub action
         run: echo "Workflow run for dev action"
       - name: Simulating and error
-        run: echo " Error Taaking place" exit 1
+        run: echo " Error Taking place" exit 1
       - name: Set up Python 3.9
         uses: actions/setup-python@v4
         with:
